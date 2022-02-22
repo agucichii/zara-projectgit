@@ -21,7 +21,7 @@ public class Metodos {
 	        boolean FirstLine = true;
 	        Locale loc = new Locale("es", "ES");
 	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy", loc);
-	        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\aguci\\Desktop\\CursoTrabajoJava\\PruebaExamen\\stocks-ITX.csv"))) {
+	        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\aguci\\eclipse-workspace\\zara-project\\stocks-ITX.csv"))) {
 				String line = br.readLine();
 				while (null != line) {
 				    String[] fields = line.split(SEPARATOR);
@@ -41,7 +41,6 @@ public class Metodos {
 
 	    public void diaViernes() {
 	        for (Datos dias : valores) {
-
 	            int lastdayweek = -dias.getCurrentDate().with(TemporalAdjusters.lastDayOfMonth()).getDayOfWeek().getValue() - 2;
 	            int rest = lastdayweek % (-7);
 	            LocalDate lastFriday = dias.getCurrentDate().with(TemporalAdjusters.lastDayOfMonth()).plusDays(rest);
@@ -49,7 +48,6 @@ public class Metodos {
 	            } else {
 	                diaVier.add(lastFriday);
 	            }
-
 	        }
 	        diaVier.remove(0);
 	    }
