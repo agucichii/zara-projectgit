@@ -25,3 +25,6 @@ Aquí encontraremos:
 #### Datos:
 
 La clase contendrá los valores de fechas y acciones, y tendrá un "constructor", métodos "getter y setters", y "toString" para poder visualizar los valores realizando los llamados.
+  
+  La compra de acciones fué de: 1254.884
+  La venta en su ciere al precio de 29.17€, dió un total de 36604.966€

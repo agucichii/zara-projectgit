@@ -28,22 +28,21 @@ public class Metodos {
 				    line = br.readLine();
 				    if (FirstLine) {
 				        FirstLine = false;
-				        continue;
-				    }
+						continue;
+					}
 				    Datos datos = new Datos(LocalDate.parse(fields[0], formatter), Double.parseDouble(fields[1]), Double.parseDouble(fields[2]));
 				    valores.add(datos);
 				}
 			} catch (NumberFormatException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	    }
 
 	    public void diaViernes() {
 	        for (Datos dias : valores) {
-	            int lastdayweek = -dias.getCurrentDate().with(TemporalAdjusters.lastDayOfMonth()).getDayOfWeek().getValue() - 2;
+	            int lastdayweek = -dias.getCurrentDate().with(TemporalAdjusters.lastDayOfMonth()).getDayOfWeek().getValue() - 3;
 	            int rest = lastdayweek % (-7);
-	            LocalDate lastFriday = dias.getCurrentDate().with(TemporalAdjusters.lastDayOfMonth()).plusDays(rest);
+	            LocalDate lastFriday = dias.getCurrentDate().with(TemporalAdjusters.lastDayOfMonth()).plusDays(rest).plusDays(1);
 	            if (diaVier.contains(lastFriday)) {
 	            } else {
 	                diaVier.add(lastFriday);
