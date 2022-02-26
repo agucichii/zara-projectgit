@@ -1,4 +1,4 @@
-package com.sinensia.zara;
+package com.sinensia.entidades;
 
 import java.time.LocalDate;
 
@@ -7,7 +7,7 @@ public class Datos {
 	LocalDate CurrentDate;
 	Double cierre;
 	Double apertura;
-
+	
 	public Datos(LocalDate CurrentDate, Double cierre, Double apertura) {
 		this.CurrentDate = CurrentDate;
 		this.cierre = cierre;
