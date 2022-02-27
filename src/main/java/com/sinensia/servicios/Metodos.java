@@ -8,15 +8,16 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
 import java.util.Locale;
-
+import org.apache.log4j.Logger;
 import com.sinensia.entidades.Datos;
 
 public class Metodos {
 
+	private static Logger LogJava = Logger.getLogger(Metodos.class);
+
 	private Double SumActions = 0.0;
 	public static final String SEPARATOR = ";";
 
-	
 	public ArrayList<Datos> leerValores(String ruta) throws IOException {
 
 		ArrayList<Datos> valores = new ArrayList<Datos>();
@@ -38,11 +39,11 @@ public class Metodos {
 			}
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
+			LogJava.error("An exception! Error!", e);
 		}
 		return valores;
 	}
-	
-	
+
 	public ArrayList<LocalDate> diaViernes(ArrayList<Datos> valores) {
 		ArrayList<LocalDate> diaVier = new ArrayList<LocalDate>();
 		for (Datos dias : valores) {
@@ -56,8 +57,7 @@ public class Metodos {
 				diaVier.add(lastFriday);
 			}
 		}
-		
-		
+
 		diaVier.remove(0);
 		return diaVier;
 	}

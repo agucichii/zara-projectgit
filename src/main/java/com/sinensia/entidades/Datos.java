@@ -7,7 +7,7 @@ public class Datos {
 	LocalDate CurrentDate;
 	Double cierre;
 	Double apertura;
-	
+
 	public Datos(LocalDate CurrentDate, Double cierre, Double apertura) {
 		this.CurrentDate = CurrentDate;
 		this.cierre = cierre;
@@ -42,5 +42,4 @@ public class Datos {
 	public String toString() {
 		return "Datos{" + "CurrentDate=" + CurrentDate + ", cierre=" + cierre + ", apertura=" + apertura + '}';
 	}
-
 }
