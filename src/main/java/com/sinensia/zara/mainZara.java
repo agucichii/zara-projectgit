@@ -21,7 +21,7 @@ public class mainZara {
 			ArrayList<Datos> compraAcc = met.diaCompra(valores, diaVier);
 			met.cantAcc(compraAcc);
 			met.ventAcc(valores);
-			System.out.println(diaVier);
+			
 		} catch (IOException e) {
 
 		}
